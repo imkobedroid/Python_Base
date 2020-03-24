@@ -132,6 +132,42 @@ print(s.age)
 print("-----------------------------------------")
 
 
+# class Screen(object):
+#     @property
+#     def width(self):
+#         return self.width
+#
+#     @property
+#     def height(self):
+#         return self.height
+#
+#     @width.setter
+#     def width(self, value):
+#         self.width = value
+#
+#     @height.setter
+#     def height(self, value):
+#         self.height = value
+#
+#     @property
+#     def resolution(self):
+#         return 100
+
+
+# screen = Screen()
+# screen.height = 99
+# screen.width = 88
+# print(screen.width)
+# print(screen.height)
+# print(screen.resolution)
+
+
+# 以上代码会报错，因为：使用height，width是不行的 需要使用_width，_height，看看报错理由也可以理解，使用height，使用 self.使用height = value赋值时，相当于又有执行了setter方法，就会一直递归，
+# 然后崩溃，所以可是使用__width，_height来使用。
+
+
+# 改进方式： 设置为私有属性
+
 class Screen(object):
     @property
     def width(self):
@@ -155,6 +191,7 @@ class Screen(object):
 
 
 screen = Screen()
+# 必须要先设置height，width  不然直接获取会报错'Screen' object has no attribute '_width'
 screen.height = 99
 screen.width = 88
 print(screen.width)
