@@ -162,8 +162,8 @@ print("-----------------------------------------")
 # print(screen.resolution)
 
 
-# 以上代码会报错，因为：使用height，width是不行的 需要使用_width，_height，看看报错理由也可以理解，使用height，使用 self.使用height = value赋值时，相当于又有执行了setter方法，就会一直递归，
-# 然后崩溃，所以可是使用__width，_height来使用。
+# 以上代码会报错，因为：使用height，width是不行的 需要使用_width，_height，看看报错理由也可以理解，使用height，使用 self.使用height =
+# value赋值时，相当于又有执行了setter方法，就会一直递归， 然后崩溃，所以可是使用__width，_height来使用。
 
 
 # 改进方式： 设置为私有属性
